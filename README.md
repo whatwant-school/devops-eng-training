@@ -1,3 +1,5 @@
+[![Deploy and Test](https://github.com/whatwant-school/devops-eng-training/actions/workflows/github-actions.yml/badge.svg)](https://github.com/whatwant-school/devops-eng-training/actions/workflows/github-actions.yml)
+
 # devops-eng-training
 ### 1. 프로젝트 소개
 해당 프로젝트는 모두의연구소 풀잎스쿨 MLOps 스터디에서 진행한 DevOps 실습입니다.  
