@@ -26,3 +26,7 @@ def test_multiply():
 def test_division():
     prediction = functions.division_function(6, 2)
     assert prediction == 3
+
+def test_sqrt():
+    prediction = functions.sqrt_function(4)
+    assert prediction == 2

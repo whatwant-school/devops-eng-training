@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, json
-from functions import add_function, subtract_function, multiply_function, division_function
+from functions import add_function, subtract_function, multiply_function, division_function, sqrt_function
 app = Flask(__name__)
 
 
@@ -84,6 +84,26 @@ def division():
     if num1.isdigit() and num2.isdigit():
         result = division_function(num1, num2)
         result = "{} / {} = {}".format(num1, num2, result)
+        response = app.response_class(
+            response=json.dumps(result),
+            status=200,
+            mimetype='application/json'
+        )
+    else:
+        response = app.response_class(
+            response=json.dumps("Bad Request Error"),
+            status=400,
+            mimetype='application/json'
+        )
+    return response
+
+
+@app.route("/sqrt", methods=["GET"])
+def sqrt():
+    num1 = request.args.get("num1")
+    if num1.isdigit():
+        result = sqrt_function(num1)
+        result = "sqrt( {} ) = {}".format(num1, result)
         response = app.response_class(
             response=json.dumps(result),
             status=200,

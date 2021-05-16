@@ -17,3 +17,12 @@ def multiply_function(num1, num2):
 def division_function(num1, num2):
     result = int(num1) // int(num2)
     return result
+
+
+def sqrt_function(num1):
+    x = 2
+
+    for idx in range(10):
+        x = ( x + ( int(num1) / x ) ) / 2
+
+    return x
